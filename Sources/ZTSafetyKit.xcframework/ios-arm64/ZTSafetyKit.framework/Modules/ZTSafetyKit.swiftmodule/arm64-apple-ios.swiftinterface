@@ -1,0 +1,448 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ZTSafetyKit
+import Alamofire
+import CoreBluetooth
+import Foundation
+import ObjectMapper
+import Swift
+import ZTCoreKit
+@_inheritsConvenienceInitializers final public class ZTSafetyActivity : ZTCoreKit.ZTActivity {
+  override final public func save()
+  override public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class ZTSafetyActivitySummary : ZTCoreKit.ZTActivitySummary {
+  final public var data: ZTSafetyKit.ZTSafetyActivitySummaryData?
+  required public init?(map: ObjectMapper.Map)
+  override final public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+final public class ZTSafetyActivitySummaryData : ObjectMapper.Mappable {
+  final public var chunk: Swift.Int
+  final public var timestamp: Swift.Double?
+  final public var standing: Swift.Int
+  final public var tiptoe: Swift.Int
+  final public var kneeling: Swift.Int
+  final public var crouch: Swift.Int
+  final public var stepsCount: Swift.Int
+  final public var stairsUpCount: Swift.Int
+  final public var stairsDownCount: Swift.Int
+  final public var prosupiR: Swift.Double
+  final public var prosupiL: Swift.Double
+  final public var contactTimeR: Swift.Int
+  final public var contactTimeL: Swift.Int
+  final public var flightTimeR: Swift.Int
+  final public var flightTimeL: Swift.Int
+  final public var strideLength: Swift.Int
+  final public var walkingSpeed: Swift.Int
+  final public var cadence: Swift.Int
+  final public var distance: Swift.Double
+  final public var walkingTime: Swift.Int
+  final public var stairsUpTime: Swift.Int
+  final public var stairsDownTime: Swift.Int
+  final public var trampling: Swift.Int
+  final public var stairsTime: Swift.Int
+  final public var vibration: Swift.Int
+  final public var slide: Swift.Int
+  final public var slip: Swift.Int
+  final public var padding: Swift.Int
+  required public init?(map: ObjectMapper.Map)
+  final public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ZTSafetySegmentData : ZTCoreKit.ZTSegmentData {
+  public var standing: Swift.UInt16
+  public var tiptoe: Swift.UInt16
+  public var kneeling: Swift.UInt16
+  public var crouch: Swift.UInt16
+  public var stepsCount: Swift.UInt16
+  public var stairsUpCount: Swift.UInt16
+  public var stairsDownCount: Swift.UInt16
+  public var prosupiR: Swift.Float
+  public var prosupiL: Swift.Float
+  public var contactTimeR: Swift.UInt16
+  public var contactTimeL: Swift.UInt16
+  public var flightTimeR: Swift.UInt16
+  public var flightTimeL: Swift.UInt16
+  public var strideLength: Swift.UInt16
+  public var walkingSpeed: Swift.UInt16
+  public var cadence: Swift.UInt16
+  public var distance: Swift.UInt16
+  public var walkingTime: Swift.UInt16
+  public var stairsUpTime: Swift.UInt16
+  public var stairsDownTime: Swift.UInt16
+  public var trampling: Swift.UInt16
+  public var vibration: Swift.UInt16
+  public var slide: Swift.UInt16
+  public var slip: Swift.UInt16
+  public var padding: Swift.UInt16
+  override public init(data: Foundation.Data, activityId: Swift.String)
+  @objc deinit
+}
+extension ZTSafetySegmentData {
+  public var description: Swift.String {
+    get
+  }
+}
+public class ZTGaitProfilePronation : ObjectMapper.Mappable {
+  public var recommendations: [Swift.String]?
+  public var firstTime: Swift.Bool
+  public var lastPerformedOn: Swift.String?
+  public var lastPerformedOnDate: Foundation.Date?
+  public var prosupiL: Swift.Int {
+    get
+  }
+  public var prosupiR: Swift.Int {
+    get
+  }
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class ZTGaitProfileWalkingAnalysis : ObjectMapper.Mappable {
+  public var recommendations: [Swift.String]?
+  public var mostRecent: ZTSafetyKit.ZTGaitProfileWalkingAnalysisData?
+  public var historical: ZTSafetyKit.ZTGaitProfileWalkingAnalysisData?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class ZTGaitProfileWalkingAnalysisData : ObjectMapper.Mappable {
+  public var timestamp: Foundation.Date?
+  public var stepsCount: Swift.Double
+  public var strideLength: Swift.Double?
+  public var walkingSpeed: Swift.Double?
+  public var distance: Swift.Double
+  public var cadence: Swift.Double?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class ZTGaitProfileWalkingSymmetry : ObjectMapper.Mappable {
+  public var recommendations: [Swift.String]?
+  public var historical: ZTSafetyKit.ZTGaitProfileWalkingSymmetryData?
+  public var mostRecent: ZTSafetyKit.ZTGaitProfileWalkingSymmetryData?
+  public var symmetry: Swift.Int
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class ZTGaitProfileWalkingSymmetryData : ObjectMapper.Mappable {
+  public var timestamp: Foundation.Date?
+  public var flightTimeL: Swift.Double
+  public var flightTimeR: Swift.Double
+  public var contactTimeL: Swift.Double
+  public var contactTimeR: Swift.Double
+  public var symmetry: Swift.Double?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class ZTInsightsBasePosture : ObjectMapper.Mappable {
+  public var totalActivityDuration: Swift.Int
+  public var totalPostureValue: Swift.Int
+  public var perPeriodAve: Swift.Float
+  public var activityDurationTrend: Swift.Int
+  public var postureValueTrend: Swift.Int
+  public var periodAveTrend: Swift.Int
+  public var metrics: [Swift.String : Any]?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ZTInsightsPosture<T> : ZTSafetyKit.ZTInsightsBasePosture where T : ObjectMapper.Mappable {
+  public var chartData: [ZTSafetyKit.ZTInsightsPostureChartData<T>]?
+  required public init?(map: ObjectMapper.Map)
+  override public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class ZTInsightsPostureChart<T> : ObjectMapper.Mappable where T : ObjectMapper.Mappable {
+  public var name: Swift.String?
+  public var series: [Swift.String]?
+  public var data: [T]?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ZTInsightsPostureChartCrouchData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
+  required public init?(map: ObjectMapper.Map)
+  override public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class ZTInsightsPostureChartData<T> : ObjectMapper.Mappable where T : ObjectMapper.Mappable {
+  public var start: Foundation.Date?
+  public var end: Foundation.Date?
+  public var charts: [ZTSafetyKit.ZTInsightsPostureChart<T>]?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ZTInsightsPostureChartKneelingData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
+  required public init?(map: ObjectMapper.Map)
+  override public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class ZTInsightsPostureChartObjectData : ObjectMapper.Mappable {
+  public var timestamp: Foundation.Date?
+  public var value: Swift.Int
+  public var value2: Swift.Int
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ZTInsightsPostureChartSlipsData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
+  required public init?(map: ObjectMapper.Map)
+  override public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ZTInsightsPostureChartStairsData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
+  required public init?(map: ObjectMapper.Map)
+  override public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ZTInsightsPostureChartStandingData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
+  required public init?(map: ObjectMapper.Map)
+  override public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ZTInsightsPostureChartStepsCountData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
+  required public init?(map: ObjectMapper.Map)
+  override public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ZTInsightsPostureChartStepsData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
+  required public init?(map: ObjectMapper.Map)
+  override public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ZTInsightsPostureChartTipToeData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
+  required public init?(map: ObjectMapper.Map)
+  override public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ZTInsightsPostureChartTramplingData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
+  required public init?(map: ObjectMapper.Map)
+  override public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ZTInsightsPostureChartVibrationData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
+  required public init?(map: ObjectMapper.Map)
+  override public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class ZTInsightsPostureData : ObjectMapper.Mappable {
+  public var timestamp: Swift.String?
+  public var stepsCount: Swift.Int?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class ZTInsightsSummary : ObjectMapper.Mappable {
+  public var stepsCount: ZTSafetyKit.ZTInsightsSummaryData?
+  public var stairsUpCount: ZTSafetyKit.ZTInsightsSummaryData?
+  public var stairsDownCount: ZTSafetyKit.ZTInsightsSummaryData?
+  public var standing: ZTSafetyKit.ZTInsightsSummaryData?
+  public var kneeling: ZTSafetyKit.ZTInsightsSummaryData?
+  public var tiptoe: ZTSafetyKit.ZTInsightsSummaryData?
+  public var crouch: ZTSafetyKit.ZTInsightsSummaryData?
+  public var vibration: ZTSafetyKit.ZTInsightsSummaryData?
+  public var slip: ZTSafetyKit.ZTInsightsSummaryData?
+  public var trampling: ZTSafetyKit.ZTInsightsSummaryData?
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public class ZTInsightsSummaryData : ObjectMapper.Mappable {
+  public var today: Swift.Int
+  public var alltime: Swift.Int {
+    get
+  }
+  required public init?(map: ObjectMapper.Map)
+  public func mapping(map: ObjectMapper.Map)
+  @objc deinit
+}
+public enum ZTPostureType : Swift.String {
+  case stairsUpCount
+  case stairsDownCount
+  case stairsCount
+  case stairsTime
+  case stepsCount
+  case standing
+  case kneeling
+  case tiptoe
+  case crouch
+  case vibration
+  case slip
+  case trampling
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum ZTPostureChartSeries : Swift.String {
+  case standing
+  case tiptoe
+  case kneeling
+  case crouch
+  case stepsCount
+  case stairsUpCount
+  case stairsDownCount
+  case stairsCount
+  case stairsTime
+  case prosupiR
+  case prosupiL
+  case contactTimeR
+  case contactTimeL
+  case flightTimeR
+  case flightTimeL
+  case strideLength
+  case walkingSpeed
+  case cadence
+  case distance
+  case walkingTime
+  case stairsUpTime
+  case stairsDownTime
+  case trampling
+  case vibration
+  case slide
+  case slip
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct ZTSafetyCalibrationMessage : Swift.CustomStringConvertible, Swift.Codable {
+  public var bytes: [Swift.UInt8]
+  public var isRight: Swift.Bool {
+    get
+  }
+  public var isLeft: Swift.Bool {
+    get
+  }
+  public var standingDone: Swift.Bool {
+    get
+  }
+  public var standingInProgress: Swift.Bool {
+    get
+  }
+  public var standingFailed: Swift.Bool {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct ZTSafetyRealtimeEventMessage : Swift.CustomStringConvertible, Swift.Codable {
+  public enum Side {
+    case left
+    case right
+    public static func == (a: ZTSafetyKit.ZTSafetyRealtimeEventMessage.Side, b: ZTSafetyKit.ZTSafetyRealtimeEventMessage.Side) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var side: ZTSafetyKit.ZTSafetyRealtimeEventMessage.Side? {
+    get
+  }
+  public var previousPosture: ZTSafetyKit.ZTSafety.Posture? {
+    get
+  }
+  public var currentPosture: ZTSafetyKit.ZTSafety.Posture? {
+    get
+  }
+  public init(bytes: [Swift.UInt8])
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension ZTSafetyRealtimeEventMessage {
+  public var description: Swift.String {
+    get
+  }
+}
+extension ZTSafety {
+  public enum Posture : Swift.UInt8 {
+    case UNDEFINED
+    case STAIR_DOWN
+    case STAIR_UP
+    case WALK
+    case TRAMPLING
+    case STANDING
+    case TIPTOE
+    case KNEELING
+    case CROUCHING
+    case VIBRATION
+    case SLIPS
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.UInt8)
+    public typealias RawValue = Swift.UInt8
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+  }
+}
+public typealias ZTCalibrationResult = (Swift.Error?) -> ()
+public typealias ZTRealtimePostureResult = (ZTSafetyKit.ZTSafetyRealtimeEventMessage) -> ()
+@_hasMissingDesignatedInitializers public class ZTSafety {
+  public static let sdkVersion: Swift.String
+  public static let activityPluginVersion: Swift.String
+  public static let shared: ZTSafetyKit.ZTSafety
+  public var currentPosture: ZTSafetyKit.ZTSafety.Posture? {
+    get
+  }
+  public var previousPosture: ZTSafetyKit.ZTSafety.Posture? {
+    get
+  }
+  public var connectedDevice: ZTCoreKit.ZTDevice? {
+    get
+  }
+  public var isActivityRunning: Swift.Bool? {
+    get
+  }
+  public var currentActivity: ZTSafetyKit.ZTSafetyActivity? {
+    get
+  }
+  public var lastSerialNumber: Swift.String? {
+    get
+  }
+  final public let onActivityStateChange: ZTCoreKit.ZTSignal<(Swift.String?, ZTCoreKit.ZTDeviceActualState, Swift.Error?)>
+  final public let onActivityStopped: ZTCoreKit.ZTSignal<(Swift.String?, ZTCoreKit.ZTDeviceActualState, Swift.Error?)>
+  final public let onCalibrationStateChanged: ZTCoreKit.ZTSignal<(ZTSafetyKit.ZTSafetyCalibrationMessage)>
+  final public let onActivityDataReceived: ZTCoreKit.ZTSignal<(Foundation.Data?, Swift.String?)>
+  final public let onActivityStopRequestSent: ZTCoreKit.ZTSignal<(Swift.String?, Swift.Error?)>
+  final public let onRealtimePosturesChange: ZTCoreKit.ZTSignal<(ZTSafetyKit.ZTSafety.Posture?)>
+  final public let onActivityRestoreStarted: ZTCoreKit.ZTSignal<(Swift.Bool)>
+  public func readGeneralState()
+  public func startActivity()
+  public func stopActivity()
+  public func startStandUpPostureCalibration(completion: @escaping ZTSafetyKit.ZTCalibrationResult)
+  public func readCalibrationState(completion: @escaping ZTSafetyKit.ZTCalibrationResult)
+  public func resetCalibrationState(completion: @escaping ZTCoreKit.ZTBaseResult)
+  public func getActivities(code: Swift.String? = nil, start: Foundation.Date, end: Foundation.Date, completion: @escaping (ZTCoreKit.ZTResultArray<ZTSafetyKit.ZTSafetyActivitySummary>))
+  public func getActivitySummary(id: Swift.String, completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTSafetyActivitySummary>))
+  public func getGaitProfileWalkingAnalysis(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTGaitProfileWalkingAnalysis>))
+  public func getGaitProfileWalkingSymmetry(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTGaitProfileWalkingSymmetry>))
+  public func getGaitProfilePronation(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTGaitProfilePronation>))
+  public func getInsightsSummary(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTInsightsSummary>))
+  public func getInsightsPosture<T>(postureType: ZTSafetyKit.ZTPostureType, period: ZTCoreKit.ZTPeriod, completion: @escaping ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTInsightsPosture<T>>) where T : ObjectMapper.Mappable
+  @objc deinit
+}
+extension ZTSafetyKit.ZTPostureType : Swift.Equatable {}
+extension ZTSafetyKit.ZTPostureType : Swift.Hashable {}
+extension ZTSafetyKit.ZTPostureType : Swift.RawRepresentable {}
+extension ZTSafetyKit.ZTPostureChartSeries : Swift.Equatable {}
+extension ZTSafetyKit.ZTPostureChartSeries : Swift.Hashable {}
+extension ZTSafetyKit.ZTPostureChartSeries : Swift.RawRepresentable {}
+extension ZTSafetyKit.ZTSafetyRealtimeEventMessage.Side : Swift.Equatable {}
+extension ZTSafetyKit.ZTSafetyRealtimeEventMessage.Side : Swift.Hashable {}
+extension ZTSafetyKit.ZTSafety.Posture : Swift.Equatable {}
+extension ZTSafetyKit.ZTSafety.Posture : Swift.Hashable {}
+extension ZTSafetyKit.ZTSafety.Posture : Swift.RawRepresentable {}

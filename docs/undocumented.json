@@ -1,0 +1,376 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/Activity/ZTSafetyActivitySummaryData.swift",
+      "line": 63,
+      "symbol": "ZTSafetyActivitySummaryData.vibration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/Activity/ZTSafetyActivitySummaryData.swift",
+      "line": 64,
+      "symbol": "ZTSafetyActivitySummaryData.slide",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/Activity/ZTSafetyActivitySummaryData.swift",
+      "line": 65,
+      "symbol": "ZTSafetyActivitySummaryData.slip",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/Activity/ZTSafetyActivitySummaryData.swift",
+      "line": 66,
+      "symbol": "ZTSafetyActivitySummaryData.padding",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/Activity/ZTSafetySegmentData.swift",
+      "line": 57,
+      "symbol": "ZTSafetySegmentData.vibration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/Activity/ZTSafetySegmentData.swift",
+      "line": 58,
+      "symbol": "ZTSafetySegmentData.slide",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/Activity/ZTSafetySegmentData.swift",
+      "line": 59,
+      "symbol": "ZTSafetySegmentData.slip",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/Activity/ZTSafetySegmentData.swift",
+      "line": 60,
+      "symbol": "ZTSafetySegmentData.padding",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/GaitProfile/ZTGaitProfileWalkingAnalysis.swift",
+      "line": 15,
+      "symbol": "ZTGaitProfileWalkingAnalysis.recommendations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 13,
+      "symbol": "ZTPostureType.stairsUpCount",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 14,
+      "symbol": "ZTPostureType.stairsDownCount",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 15,
+      "symbol": "ZTPostureType.stairsCount",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 16,
+      "symbol": "ZTPostureType.stairsTime",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 17,
+      "symbol": "ZTPostureType.stepsCount",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 18,
+      "symbol": "ZTPostureType.standing",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 19,
+      "symbol": "ZTPostureType.kneeling",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 20,
+      "symbol": "ZTPostureType.tiptoe",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 21,
+      "symbol": "ZTPostureType.crouch",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 22,
+      "symbol": "ZTPostureType.vibration",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 23,
+      "symbol": "ZTPostureType.slip",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 24,
+      "symbol": "ZTPostureType.trampling",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 29,
+      "symbol": "ZTPostureChartSeries.standing",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 30,
+      "symbol": "ZTPostureChartSeries.tiptoe",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 31,
+      "symbol": "ZTPostureChartSeries.kneeling",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 32,
+      "symbol": "ZTPostureChartSeries.crouch",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 33,
+      "symbol": "ZTPostureChartSeries.stepsCount",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 34,
+      "symbol": "ZTPostureChartSeries.stairsUpCount",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 35,
+      "symbol": "ZTPostureChartSeries.stairsDownCount",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 36,
+      "symbol": "ZTPostureChartSeries.stairsCount",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 37,
+      "symbol": "ZTPostureChartSeries.stairsTime",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 38,
+      "symbol": "ZTPostureChartSeries.prosupiR",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 39,
+      "symbol": "ZTPostureChartSeries.prosupiL",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 40,
+      "symbol": "ZTPostureChartSeries.contactTimeR",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 41,
+      "symbol": "ZTPostureChartSeries.contactTimeL",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 42,
+      "symbol": "ZTPostureChartSeries.flightTimeR",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 43,
+      "symbol": "ZTPostureChartSeries.flightTimeL",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 44,
+      "symbol": "ZTPostureChartSeries.strideLength",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 45,
+      "symbol": "ZTPostureChartSeries.walkingSpeed",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 46,
+      "symbol": "ZTPostureChartSeries.cadence",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 47,
+      "symbol": "ZTPostureChartSeries.distance",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 48,
+      "symbol": "ZTPostureChartSeries.walkingTime",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 49,
+      "symbol": "ZTPostureChartSeries.stairsUpTime",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 50,
+      "symbol": "ZTPostureChartSeries.stairsDownTime",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 51,
+      "symbol": "ZTPostureChartSeries.trampling",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 52,
+      "symbol": "ZTPostureChartSeries.vibration",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 53,
+      "symbol": "ZTPostureChartSeries.slide",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTPostureType.swift",
+      "line": 54,
+      "symbol": "ZTPostureChartSeries.slip",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTSafetyCalibrationMessage.swift",
+      "line": 17,
+      "symbol": "ZTSafetyCalibrationMessage.isRight",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTSafetyCalibrationMessage.swift",
+      "line": 21,
+      "symbol": "ZTSafetyCalibrationMessage.isLeft",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTSafetyRealtimeEventMessage.swift",
+      "line": 15,
+      "symbol": "ZTSafetyRealtimeEventMessage.Side.left",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/ZTSafetyRealtimeEventMessage.swift",
+      "line": 16,
+      "symbol": "ZTSafetyRealtimeEventMessage.Side.right",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/ZTSafety.swift",
+      "line": 11,
+      "symbol": "ZTSafety",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/ZTSafety.swift",
+      "line": 19,
+      "symbol": "ZTSafety",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit"
+}
