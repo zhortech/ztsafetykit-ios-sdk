@@ -366,7 +366,14 @@
     },
     {
       "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/ZTSafety.swift",
-      "line": 19,
+      "line": 16,
+      "symbol": "ZTActivityResult",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/ZTSafety.swift",
+      "line": 20,
       "symbol": "ZTSafety",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
