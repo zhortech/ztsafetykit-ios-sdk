@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'ZTSafetyKit'
-  s.version = '1.0.44'
+  s.version = '1.0.45'
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.summary = 'Official Zhortech ZTSafetyKit SDK for iOS to work with Safety products.'
   s.homepage = 'https://zhortech.com/'
