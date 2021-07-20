@@ -1,10 +1,8 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ZTSafetyKit
-import Alamofire
 import CoreBluetooth
 import Foundation
-import ObjectMapper
 import Swift
 import ZTCoreKit
 @_inheritsConvenienceInitializers final public class ZTSafetyActivity : ZTCoreKit.ZTActivity {
@@ -15,11 +13,11 @@ import ZTCoreKit
 }
 @_inheritsConvenienceInitializers final public class ZTSafetyActivitySummary : ZTCoreKit.ZTActivitySummary {
   final public var data: ZTSafetyKit.ZTSafetyActivitySummaryData?
-  required public init?(map: ObjectMapper.Map)
-  override final public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  override final public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-final public class ZTSafetyActivitySummaryData : ObjectMapper.Mappable {
+final public class ZTSafetyActivitySummaryData : ZTCoreKit.ZTMappable {
   final public var chunk: Swift.Int
   final public var timestamp: Swift.Double?
   final public var standing: Swift.Int
@@ -48,8 +46,8 @@ final public class ZTSafetyActivitySummaryData : ObjectMapper.Mappable {
   final public var slide: Swift.Int
   final public var slip: Swift.Int
   final public var padding: Swift.Int
-  required public init?(map: ObjectMapper.Map)
-  final public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  final public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ZTSafetySegmentData : ZTCoreKit.ZTSegmentData {
@@ -86,7 +84,7 @@ extension ZTSafetySegmentData {
     get
   }
 }
-public class ZTGaitProfilePronation : ObjectMapper.Mappable {
+public class ZTGaitProfilePronation : ZTCoreKit.ZTMappable {
   public var recommendations: [Swift.String]?
   public var firstTime: Swift.Bool
   public var lastPerformedOn: Swift.String?
@@ -97,50 +95,50 @@ public class ZTGaitProfilePronation : ObjectMapper.Mappable {
   public var prosupiR: Swift.Int {
     get
   }
-  required public init?(map: ObjectMapper.Map)
-  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-public class ZTGaitProfileWalkingAnalysis : ObjectMapper.Mappable {
+public class ZTGaitProfileWalkingAnalysis : ZTCoreKit.ZTMappable {
   public var recommendations: [Swift.String]?
   public var mostRecent: ZTSafetyKit.ZTGaitProfileWalkingAnalysisData?
   public var historical: ZTSafetyKit.ZTGaitProfileWalkingAnalysisData?
-  required public init?(map: ObjectMapper.Map)
-  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-public class ZTGaitProfileWalkingAnalysisData : ObjectMapper.Mappable {
+public class ZTGaitProfileWalkingAnalysisData : ZTCoreKit.ZTMappable {
   public var timestamp: Foundation.Date?
   public var stepsCount: Swift.Double
   public var strideLength: Swift.Double?
   public var walkingSpeed: Swift.Double?
   public var distance: Swift.Double
   public var cadence: Swift.Double?
-  required public init?(map: ObjectMapper.Map)
-  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-public class ZTGaitProfileWalkingSymmetry : ObjectMapper.Mappable {
+public class ZTGaitProfileWalkingSymmetry : ZTCoreKit.ZTMappable {
   public var recommendations: [Swift.String]?
   public var historical: ZTSafetyKit.ZTGaitProfileWalkingSymmetryData?
   public var mostRecent: ZTSafetyKit.ZTGaitProfileWalkingSymmetryData?
   public var symmetry: Swift.Int
-  required public init?(map: ObjectMapper.Map)
-  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-public class ZTGaitProfileWalkingSymmetryData : ObjectMapper.Mappable {
+public class ZTGaitProfileWalkingSymmetryData : ZTCoreKit.ZTMappable {
   public var timestamp: Foundation.Date?
   public var flightTimeL: Swift.Double
   public var flightTimeR: Swift.Double
   public var contactTimeL: Swift.Double
   public var contactTimeR: Swift.Double
   public var symmetry: Swift.Double?
-  required public init?(map: ObjectMapper.Map)
-  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-public class ZTInsightsBasePosture : ObjectMapper.Mappable {
+public class ZTInsightsBasePosture : ZTCoreKit.ZTMappable {
   public var totalActivityDuration: Swift.Int
   public var totalPostureValue: Swift.Int
   public var perPeriodAve: Swift.Float
@@ -148,98 +146,98 @@ public class ZTInsightsBasePosture : ObjectMapper.Mappable {
   public var postureValueTrend: Swift.Int
   public var periodAveTrend: Swift.Int
   public var metrics: [Swift.String : Any]?
-  required public init?(map: ObjectMapper.Map)
-  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-@_inheritsConvenienceInitializers public class ZTInsightsPosture<T> : ZTSafetyKit.ZTInsightsBasePosture where T : ObjectMapper.Mappable {
+@_inheritsConvenienceInitializers public class ZTInsightsPosture<T> : ZTSafetyKit.ZTInsightsBasePosture where T : ZTCoreKit.ZTMappable {
   public var chartData: [ZTSafetyKit.ZTInsightsPostureChartData<T>]?
-  required public init?(map: ObjectMapper.Map)
-  override public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  override public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-public class ZTInsightsPostureChart<T> : ObjectMapper.Mappable where T : ObjectMapper.Mappable {
+public class ZTInsightsPostureChart<T> : ZTCoreKit.ZTMappable where T : ZTCoreKit.ZTMappable {
   public var name: Swift.String?
   public var series: [Swift.String]?
   public var data: [T]?
-  required public init?(map: ObjectMapper.Map)
-  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
 @_inheritsConvenienceInitializers public class ZTInsightsPostureChartCrouchData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
-  required public init?(map: ObjectMapper.Map)
-  override public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  override public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-public class ZTInsightsPostureChartData<T> : ObjectMapper.Mappable where T : ObjectMapper.Mappable {
+public class ZTInsightsPostureChartData<T> : ZTCoreKit.ZTMappable where T : ZTCoreKit.ZTMappable {
   public var start: Foundation.Date?
   public var end: Foundation.Date?
   public var charts: [ZTSafetyKit.ZTInsightsPostureChart<T>]?
-  required public init?(map: ObjectMapper.Map)
-  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
 @_inheritsConvenienceInitializers public class ZTInsightsPostureChartKneelingData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
-  required public init?(map: ObjectMapper.Map)
-  override public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  override public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-public class ZTInsightsPostureChartObjectData : ObjectMapper.Mappable {
+public class ZTInsightsPostureChartObjectData : ZTCoreKit.ZTMappable {
   public var timestamp: Foundation.Date?
   public var value: Swift.Int
   public var value2: Swift.Int
-  required public init?(map: ObjectMapper.Map)
-  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
 @_inheritsConvenienceInitializers public class ZTInsightsPostureChartSlipsData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
-  required public init?(map: ObjectMapper.Map)
-  override public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  override public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
 @_inheritsConvenienceInitializers public class ZTInsightsPostureChartStairsData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
-  required public init?(map: ObjectMapper.Map)
-  override public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  override public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
 @_inheritsConvenienceInitializers public class ZTInsightsPostureChartStandingData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
-  required public init?(map: ObjectMapper.Map)
-  override public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  override public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
 @_inheritsConvenienceInitializers public class ZTInsightsPostureChartStepsCountData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
-  required public init?(map: ObjectMapper.Map)
-  override public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  override public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
 @_inheritsConvenienceInitializers public class ZTInsightsPostureChartStepsData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
-  required public init?(map: ObjectMapper.Map)
-  override public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  override public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
 @_inheritsConvenienceInitializers public class ZTInsightsPostureChartTipToeData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
-  required public init?(map: ObjectMapper.Map)
-  override public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  override public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
 @_inheritsConvenienceInitializers public class ZTInsightsPostureChartTramplingData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
-  required public init?(map: ObjectMapper.Map)
-  override public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  override public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
 @_inheritsConvenienceInitializers public class ZTInsightsPostureChartVibrationData : ZTSafetyKit.ZTInsightsPostureChartObjectData {
-  required public init?(map: ObjectMapper.Map)
-  override public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  override public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-public class ZTInsightsPostureData : ObjectMapper.Mappable {
+public class ZTInsightsPostureData : ZTCoreKit.ZTMappable {
   public var timestamp: Swift.String?
   public var stepsCount: Swift.Int?
-  required public init?(map: ObjectMapper.Map)
-  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-public class ZTInsightsSummary : ObjectMapper.Mappable {
+public class ZTInsightsSummary : ZTCoreKit.ZTMappable {
   public var stepsCount: ZTSafetyKit.ZTInsightsSummaryData?
   public var stairsUpCount: ZTSafetyKit.ZTInsightsSummaryData?
   public var stairsDownCount: ZTSafetyKit.ZTInsightsSummaryData?
@@ -250,17 +248,17 @@ public class ZTInsightsSummary : ObjectMapper.Mappable {
   public var vibration: ZTSafetyKit.ZTInsightsSummaryData?
   public var slip: ZTSafetyKit.ZTInsightsSummaryData?
   public var trampling: ZTSafetyKit.ZTInsightsSummaryData?
-  required public init?(map: ObjectMapper.Map)
-  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-public class ZTInsightsSummaryData : ObjectMapper.Mappable {
+public class ZTInsightsSummaryData : ZTCoreKit.ZTMappable {
   public var today: Swift.Int
   public var alltime: Swift.Int {
     get
   }
-  required public init?(map: ObjectMapper.Map)
-  public func mapping(map: ObjectMapper.Map)
+  required public init?(map: ZTCoreKit.ZTMap)
+  public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
 public enum ZTPostureType : Swift.String {
@@ -437,7 +435,7 @@ public typealias ZTRealtimePostureResult = (ZTSafetyKit.ZTSafetyRealtimeEventMes
   public func getGaitProfileWalkingSymmetry(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTGaitProfileWalkingSymmetry>))
   public func getGaitProfilePronation(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTGaitProfilePronation>))
   public func getInsightsSummary(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTInsightsSummary>))
-  public func getInsightsPosture<T>(postureType: ZTSafetyKit.ZTPostureType, period: ZTCoreKit.ZTPeriod, completion: @escaping ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTInsightsPosture<T>>) where T : ObjectMapper.Mappable
+  public func getInsightsPosture<T>(postureType: ZTSafetyKit.ZTPostureType, period: ZTCoreKit.ZTPeriod, completion: @escaping ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTInsightsPosture<T>>) where T : ZTCoreKit.ZTMappable
   @objc deinit
 }
 extension ZTSafetyKit.ZTPostureType : Swift.Equatable {}
