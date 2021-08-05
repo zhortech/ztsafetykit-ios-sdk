@@ -80,7 +80,10 @@ final public class ZTSafetyActivitySummaryData : ZTCoreKit.ZTMappable {
   @objc deinit
 }
 extension ZTSafetySegmentData {
-  public var description: Swift.String {
+  @objc dynamic public var description: Swift.String {
+    @objc get
+  }
+  public var extendedDescription: Swift.String {
     get
   }
 }
@@ -127,6 +130,11 @@ public class ZTGaitProfileWalkingSymmetry : ZTCoreKit.ZTMappable {
   public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
+extension ZTSafety {
+  public func startCalibration(completion: @escaping ZTSafetyKit.ZTCalibrationResult)
+  public func readCalibration(completion: @escaping ZTSafetyKit.ZTCalibrationResult)
+  public func resetCalibration(completion: @escaping ZTCoreKit.ZTBaseResult)
+}
 public class ZTGaitProfileWalkingSymmetryData : ZTCoreKit.ZTMappable {
   public var timestamp: Foundation.Date?
   public var flightTimeL: Swift.Double
@@ -169,6 +177,29 @@ public class ZTInsightsPostureChart<T> : ZTCoreKit.ZTMappable where T : ZTCoreKi
   override public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
+@_hasMissingDesignatedInitializers public class ZTSafetyTimestampData : ZTCoreKit.ZTSegmentData {
+  public enum ChunkType : Swift.UInt8 {
+    case unknown
+    case start
+    case stop
+    case pause
+    case resume
+    public init?(rawValue: Swift.UInt8)
+    public typealias RawValue = Swift.UInt8
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+  }
+  public var timestampType: ZTSafetyKit.ZTSafetyTimestampData.ChunkType
+  public var timestampValue: Swift.UInt32
+  override public init(data: Foundation.Data, activityId: Swift.String)
+  @objc deinit
+}
+extension ZTSafetyTimestampData {
+  public var description: Swift.String {
+    get
+  }
+}
 public class ZTInsightsPostureChartData<T> : ZTCoreKit.ZTMappable where T : ZTCoreKit.ZTMappable {
   public var start: Foundation.Date?
   public var end: Foundation.Date?
@@ -181,6 +212,23 @@ public class ZTInsightsPostureChartData<T> : ZTCoreKit.ZTMappable where T : ZTCo
   required public init?(map: ZTCoreKit.ZTMap)
   override public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
+}
+extension ZTSafety {
+  public func getActivities(code: Swift.String? = nil, start: Foundation.Date, end: Foundation.Date, completion: @escaping (ZTCoreKit.ZTResultArray<ZTSafetyKit.ZTSafetyActivitySummary>))
+  public func getActivitySummary(id: Swift.String, completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTSafetyActivitySummary>))
+  public func getGaitProfileWalkingAnalysis(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTGaitProfileWalkingAnalysis>))
+  public func getGaitProfileWalkingSymmetry(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTGaitProfileWalkingSymmetry>))
+  public func getGaitProfilePronation(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTGaitProfilePronation>))
+  public func getInsightsSummary(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTInsightsSummary>))
+  public func getInsightsPosture<T>(postureType: ZTSafetyKit.ZTPostureType, period: ZTCoreKit.ZTPeriod, completion: @escaping ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTInsightsPosture<T>>) where T : ZTCoreKit.ZTMappable
+}
+extension ZTSafety {
+  @available(*, deprecated, renamed: "startActivity", message: "This method is deprecated, use method with same name and completion handler")
+  public func startActivity()
+  @available(*, deprecated, renamed: "stopActivity", message: "This method is deprecated, use same with same name completion handler")
+  public func stopActivity()
+  @available(*, deprecated, renamed: "startCalibration")
+  public func startStandUpPostureCalibration(completion: @escaping ZTSafetyKit.ZTCalibrationResult)
 }
 public class ZTInsightsPostureChartObjectData : ZTCoreKit.ZTMappable {
   public var timestamp: Foundation.Date?
@@ -365,6 +413,10 @@ extension ZTSafetyRealtimeEventMessage {
   }
 }
 extension ZTSafety {
+  public func startActivity(completion: ZTSafetyKit.ZTActivityResult?)
+  public func stopActivity(completion: ZTSafetyKit.ZTActivityResult?)
+}
+extension ZTSafety {
   public enum Posture : Swift.UInt8 {
     case UNDEFINED
     case STAIR_DOWN
@@ -420,24 +472,13 @@ public typealias ZTRealtimePostureResult = (ZTSafetyKit.ZTSafetyRealtimeEventMes
   final public let onRealtimePosturesChange: ZTCoreKit.ZTSignal<(ZTSafetyKit.ZTSafety.Posture?)>
   final public let onActivityRestoreStarted: ZTCoreKit.ZTSignal<(Swift.Bool)>
   public func readGeneralState()
-  public func startActivity(completion: ZTSafetyKit.ZTActivityResult?)
-  public func stopActivity(completion: ZTSafetyKit.ZTActivityResult?)
-  @available(*, deprecated, renamed: "startActivity", message: "This method is deprecated, use same with same name completion handler")
-  public func startActivity()
-  @available(*, deprecated, renamed: "stopActivity", message: "This method is deprecated, use same with same name completion handler")
-  public func stopActivity()
-  public func startStandUpPostureCalibration(completion: @escaping ZTSafetyKit.ZTCalibrationResult)
-  public func readCalibrationState(completion: @escaping ZTSafetyKit.ZTCalibrationResult)
-  public func resetCalibrationState(completion: @escaping ZTCoreKit.ZTBaseResult)
-  public func getActivities(code: Swift.String? = nil, start: Foundation.Date, end: Foundation.Date, completion: @escaping (ZTCoreKit.ZTResultArray<ZTSafetyKit.ZTSafetyActivitySummary>))
-  public func getActivitySummary(id: Swift.String, completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTSafetyActivitySummary>))
-  public func getGaitProfileWalkingAnalysis(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTGaitProfileWalkingAnalysis>))
-  public func getGaitProfileWalkingSymmetry(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTGaitProfileWalkingSymmetry>))
-  public func getGaitProfilePronation(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTGaitProfilePronation>))
-  public func getInsightsSummary(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTInsightsSummary>))
-  public func getInsightsPosture<T>(postureType: ZTSafetyKit.ZTPostureType, period: ZTCoreKit.ZTPeriod, completion: @escaping ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTInsightsPosture<T>>) where T : ZTCoreKit.ZTMappable
+  public func setInactivityTimeout(seconds: Foundation.TimeInterval, completion: @escaping ZTCoreKit.ZTBaseResult)
+  public func getInactivityTimeout(completion: @escaping ((Swift.Int) -> Swift.Void))
   @objc deinit
 }
+extension ZTSafetyKit.ZTSafetyTimestampData.ChunkType : Swift.Equatable {}
+extension ZTSafetyKit.ZTSafetyTimestampData.ChunkType : Swift.Hashable {}
+extension ZTSafetyKit.ZTSafetyTimestampData.ChunkType : Swift.RawRepresentable {}
 extension ZTSafetyKit.ZTPostureType : Swift.Equatable {}
 extension ZTSafetyKit.ZTPostureType : Swift.Hashable {}
 extension ZTSafetyKit.ZTPostureType : Swift.RawRepresentable {}

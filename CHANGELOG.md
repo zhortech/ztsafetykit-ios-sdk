@@ -1,6 +1,10 @@
 # Changelog
 
-## [1.0.45](https://gitlab.com/zhor-tech/sdk/ios/ztsafetykit/-/tags/1.0.45) (2021-07-16)
+## [v1.1.1](https://github.com/zhortech/ztsafetykit-ios-sdk.git/-/tags/1.1.1) (2021-08-05)
+
+- Changed support for realtime message for firmware 3.11.4.SF.4.12
+
+## [1.1.0](https://github.com/zhortech/ztsafetykit-ios-sdk.git/-/tags/1.1.0) (2021-07-16)
 
 - Added callback to `startActivity` method - `startActivity(completion: ((activityId: String?, error: ZTError?) -> Void)?)` 
 - Added callback to  `stopActivity` method - `stopActivity(completion: ((activityId: String?, error: ZTError?) -> Void)?)`

@@ -1,7 +1,7 @@
 # ZTSafetyKit
 
 [![Platforms](https://img.shields.io/cocoapods/p/ZTSafetyKit.svg)](https://cocoapods.org/pods/ZTSafetyKit)
-[![License](https://img.shields.io/cocoapods/l/ZTSafetyKit)](https://raw.githubusercontent.com/zhortech/ztsportkit-ios-sdk/main/LICENSE)
+[![License](https://img.shields.io/cocoapods/l/ZTSafetyKit)](https://raw.githubusercontent.com/zhortech/ztsafetykit-ios-sdk/main/LICENSE)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/ZTSafetyKit.svg)](https://cocoapods.org/pods/ZTSafetyKit)
 
 - [Requirements](#requirements)
@@ -26,7 +26,7 @@
 $ gem install cocoapods
 ```
 
-To integrate ZTSportKit into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate ZTSafetyKit into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
@@ -71,7 +71,7 @@ let package = Package(
         .package(url: "https://github.com/zhortech/ztsafetykit-ios-sdk.git", .upToNextMajor(from: "1.0.0"))
     ],
     targets: [
-        .target(name: "ZTSportKit", dependencies: ["ZTSafetyKit"])
+        .target(name: "ZTSafetyKit", dependencies: ["ZTCoreKit"])
     ]
 )
 ```
@@ -120,7 +120,7 @@ $ git submodule update --init --recursive
 <details>
   <summary><strong>Embedded Binaries</strong></summary><p>
 
-- Download the latest release from https://github.com/zhortech/ztsportkit-ios-sdk/releases
+- Download the latest release from https://github.com/zhortech/ztsafetykit-ios-sdk/releases
 - Next, select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the "Targets" heading in the sidebar.
 - In the tab bar at the top of that window, open the "General" panel.
 - Click on the `+` button under the "Embedded Binaries" section.
@@ -212,4 +212,4 @@ ZhorTech [@zhortech](https://twitter.com/zhortech)
 
 ## License
 
-ZTSSafetyKit is released under the MIT license. See [LICENSE](https://github.com/zhortech/ztsportkit-ios-sdk.git/blob/master/LICENSE) for details.
+ZTSafetyKit is released under the MIT license. See [LICENSE](https://github.com/zhortech/ztsafetykit-ios-sdk.git/blob/master/LICENSE) for details.
