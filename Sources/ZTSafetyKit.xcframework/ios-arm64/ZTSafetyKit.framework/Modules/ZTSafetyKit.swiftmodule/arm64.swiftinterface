@@ -177,29 +177,6 @@ public class ZTInsightsPostureChart<T> : ZTCoreKit.ZTMappable where T : ZTCoreKi
   override public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class ZTSafetyTimestampData : ZTCoreKit.ZTSegmentData {
-  public enum ChunkType : Swift.UInt8 {
-    case unknown
-    case start
-    case stop
-    case pause
-    case resume
-    public init?(rawValue: Swift.UInt8)
-    public typealias RawValue = Swift.UInt8
-    public var rawValue: Swift.UInt8 {
-      get
-    }
-  }
-  public var timestampType: ZTSafetyKit.ZTSafetyTimestampData.ChunkType
-  public var timestampValue: Swift.UInt32
-  override public init(data: Foundation.Data, activityId: Swift.String)
-  @objc deinit
-}
-extension ZTSafetyTimestampData {
-  public var description: Swift.String {
-    get
-  }
-}
 public class ZTInsightsPostureChartData<T> : ZTCoreKit.ZTMappable where T : ZTCoreKit.ZTMappable {
   public var start: Foundation.Date?
   public var end: Foundation.Date?
@@ -413,7 +390,7 @@ extension ZTSafetyRealtimeEventMessage {
   }
 }
 extension ZTSafety {
-  public func startActivity(completion: ZTSafetyKit.ZTActivityResult?)
+  public func startActivity(autoStartActivity: Swift.Bool = false, completion: ZTSafetyKit.ZTActivityResult?)
   public func stopActivity(completion: ZTSafetyKit.ZTActivityResult?)
 }
 extension ZTSafety {
@@ -467,18 +444,16 @@ public typealias ZTRealtimePostureResult = (ZTSafetyKit.ZTSafetyRealtimeEventMes
   final public let onActivityStateChange: ZTCoreKit.ZTSignal<(Swift.String?, ZTCoreKit.ZTDeviceActualState, Swift.Error?)>
   final public let onActivityStopped: ZTCoreKit.ZTSignal<(Swift.String?, ZTCoreKit.ZTDeviceActualState, Swift.Error?)>
   final public let onCalibrationStateChanged: ZTCoreKit.ZTSignal<(ZTSafetyKit.ZTSafetyCalibrationMessage)>
-  final public let onActivityDataReceived: ZTCoreKit.ZTSignal<(Foundation.Data?, Swift.String?)>
+  final public let onActivityDataReceived: ZTCoreKit.ZTSignal<(Foundation.Data?)>
   final public let onActivityStopRequestSent: ZTCoreKit.ZTSignal<(Swift.String?, Swift.Error?)>
   final public let onRealtimePosturesChange: ZTCoreKit.ZTSignal<(ZTSafetyKit.ZTSafety.Posture?)>
   final public let onActivityRestoreStarted: ZTCoreKit.ZTSignal<(Swift.Bool)>
-  public func readGeneralState()
+  public func readGeneralState(completion: @escaping ((ZTCoreKit.ZTDeviceActualState?) -> Swift.Void))
+  public func resendData()
   public func setInactivityTimeout(seconds: Foundation.TimeInterval, completion: @escaping ZTCoreKit.ZTBaseResult)
   public func getInactivityTimeout(completion: @escaping ((Swift.Int) -> Swift.Void))
   @objc deinit
 }
-extension ZTSafetyKit.ZTSafetyTimestampData.ChunkType : Swift.Equatable {}
-extension ZTSafetyKit.ZTSafetyTimestampData.ChunkType : Swift.Hashable {}
-extension ZTSafetyKit.ZTSafetyTimestampData.ChunkType : Swift.RawRepresentable {}
 extension ZTSafetyKit.ZTPostureType : Swift.Equatable {}
 extension ZTSafetyKit.ZTPostureType : Swift.Hashable {}
 extension ZTSafetyKit.ZTPostureType : Swift.RawRepresentable {}
