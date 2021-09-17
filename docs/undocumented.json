@@ -57,27 +57,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/Activity/ZTSafetyTimestampData.swift",
-      "line": 13,
-      "symbol": "ZTSafetyTimestampData.ChunkType",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/Activity/ZTSafetyTimestampData.swift",
-      "line": 36,
-      "symbol": "ZTSafetyTimestampData.timestampType",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/Activity/ZTSafetyTimestampData.swift",
-      "line": 37,
-      "symbol": "ZTSafetyTimestampData.timestampValue",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/pavel/Documents/Work/Zhortech/Framework/iOS/ztsafetykit/Sources/ZTSafetyKit/Models/GaitProfile/ZTGaitProfileWalkingAnalysis.swift",
       "line": 15,
       "symbol": "ZTGaitProfileWalkingAnalysis.recommendations",

@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.2](https://github.com/zhortech/ztsafetykit-ios-sdk.git/-/tags/1.1.2) (2021-09-17)
+
+- Support for automatic activity starting from firmware 3.12.00.SF.04.14.  Automatic activity should be started with method `startActivity(autoStartActivity:, completion:)`
+- Changed method `readGeneralState(completion:)` to have completion handler
+- Fixed `ZTGaitProfileWalkingAnalysis`
+
 ## [v1.1.1](https://github.com/zhortech/ztsafetykit-ios-sdk.git/-/tags/1.1.1) (2021-08-05)
 
 - Changed support for realtime message for firmware 3.11.4.SF.4.12
