@@ -449,7 +449,6 @@ public typealias ZTRealtimePostureResult = (ZTSafetyKit.ZTSafetyRealtimeEventMes
   final public let onRealtimePosturesChange: ZTCoreKit.ZTSignal<(ZTSafetyKit.ZTSafety.Posture?)>
   final public let onActivityRestoreStarted: ZTCoreKit.ZTSignal<(Swift.Bool)>
   public func readGeneralState(completion: @escaping ((ZTCoreKit.ZTDeviceActualState?) -> Swift.Void))
-  public func resendData()
   public func setInactivityTimeout(seconds: Foundation.TimeInterval, completion: @escaping ZTCoreKit.ZTBaseResult)
   public func getInactivityTimeout(completion: @escaping ((Swift.Int) -> Swift.Void))
   @objc deinit
