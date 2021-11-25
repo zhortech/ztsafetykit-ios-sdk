@@ -1,10 +1,11 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
 // swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ZTSafetyKit
 import CoreBluetooth
 import Foundation
 import Swift
 import ZTCoreKit
+import _Concurrency
 @_inheritsConvenienceInitializers final public class ZTSafetyActivity : ZTCoreKit.ZTActivity {
   override final public func save()
   override public init()
@@ -76,10 +77,9 @@ final public class ZTSafetyActivitySummaryData : ZTCoreKit.ZTMappable {
   public var slide: Swift.UInt16
   public var slip: Swift.UInt16
   public var padding: Swift.UInt16
-  override public init(data: Foundation.Data, activityId: Swift.String)
   @objc deinit
 }
-extension ZTSafetySegmentData {
+extension ZTSafetyKit.ZTSafetySegmentData {
   @objc dynamic public var description: Swift.String {
     @objc get
   }
@@ -130,7 +130,7 @@ public class ZTGaitProfileWalkingSymmetry : ZTCoreKit.ZTMappable {
   public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-extension ZTSafety {
+extension ZTSafetyKit.ZTSafety {
   public func startCalibration(completion: @escaping ZTSafetyKit.ZTCalibrationResult)
   public func readCalibration(completion: @escaping ZTSafetyKit.ZTCalibrationResult)
   public func resetCalibration(completion: @escaping ZTCoreKit.ZTBaseResult)
@@ -190,7 +190,7 @@ public class ZTInsightsPostureChartData<T> : ZTCoreKit.ZTMappable where T : ZTCo
   override public func mapping(map: ZTCoreKit.ZTMap)
   @objc deinit
 }
-extension ZTSafety {
+extension ZTSafetyKit.ZTSafety {
   public func getActivities(code: Swift.String? = nil, start: Foundation.Date, end: Foundation.Date, completion: @escaping (ZTCoreKit.ZTResultArray<ZTSafetyKit.ZTSafetyActivitySummary>))
   public func getActivitySummary(id: Swift.String, completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTSafetyActivitySummary>))
   public func getGaitProfileWalkingAnalysis(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTGaitProfileWalkingAnalysis>))
@@ -199,7 +199,7 @@ extension ZTSafety {
   public func getInsightsSummary(completion: @escaping (ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTInsightsSummary>))
   public func getInsightsPosture<T>(postureType: ZTSafetyKit.ZTPostureType, period: ZTCoreKit.ZTPeriod, completion: @escaping ZTCoreKit.ZTResultObject<ZTSafetyKit.ZTInsightsPosture<T>>) where T : ZTCoreKit.ZTMappable
 }
-extension ZTSafety {
+extension ZTSafetyKit.ZTSafety {
   @available(*, deprecated, renamed: "startActivity", message: "This method is deprecated, use method with same name and completion handler")
   public func startActivity()
   @available(*, deprecated, renamed: "stopActivity", message: "This method is deprecated, use same with same name completion handler")
@@ -384,16 +384,16 @@ public struct ZTSafetyRealtimeEventMessage : Swift.CustomStringConvertible, Swif
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-extension ZTSafetyRealtimeEventMessage {
+extension ZTSafetyKit.ZTSafetyRealtimeEventMessage {
   public var description: Swift.String {
     get
   }
 }
-extension ZTSafety {
+extension ZTSafetyKit.ZTSafety {
   public func startActivity(autoStartActivity: Swift.Bool = false, completion: ZTSafetyKit.ZTActivityResult?)
   public func stopActivity(completion: ZTSafetyKit.ZTActivityResult?)
 }
-extension ZTSafety {
+extension ZTSafetyKit.ZTSafety {
   public enum Posture : Swift.UInt8 {
     case UNDEFINED
     case STAIR_DOWN
@@ -416,7 +416,7 @@ extension ZTSafety {
     }
   }
 }
-public typealias ZTCalibrationResult = (Swift.Error?) -> ()
+public typealias ZTCalibrationResult = (ZTCoreKit.ZTError?) -> ()
 public typealias ZTActivityResult = (Swift.String?, ZTCoreKit.ZTError?) -> Swift.Void
 public typealias ZTRealtimePostureResult = (ZTSafetyKit.ZTSafetyRealtimeEventMessage) -> ()
 @_hasMissingDesignatedInitializers public class ZTSafety {

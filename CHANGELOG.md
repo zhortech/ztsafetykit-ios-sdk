@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.1.3](https://github.com/zhortech/ztsafetykit-ios-sdk.git/-/tags/1.1.3) (2021-11-25)
+
+- Support for Baliston firmware
+- Update for new ZTCoreKit changes
+
 ## [1.1.2](https://github.com/zhortech/ztsafetykit-ios-sdk.git/-/tags/1.1.2) (2021-09-17)
 
 - Support for automatic activity starting from firmware 3.12.00.SF.04.14.  Automatic activity should be started with method `startActivity(autoStartActivity:, completion:)`
