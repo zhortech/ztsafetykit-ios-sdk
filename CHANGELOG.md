@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.4](https://github.com/zhortech/ztsafetykit-ios-sdk.git/-/tags/1.1.4) (2022-01-25)
+
+- Support for ZTCoreKit changes
+
 ## [1.1.3](https://github.com/zhortech/ztsafetykit-ios-sdk.git/-/tags/1.1.3) (2021-11-25)
 
 - Support for Baliston firmware
