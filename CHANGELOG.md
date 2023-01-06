@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.51](https://github.com/zhortech/ztsafetykit-ios-sdk.git/-/tags/1.1.51) (2023-01-06)
+
+- `ZTCoreKit` version up
+
 ## [1.1.4](https://github.com/zhortech/ztsafetykit-ios-sdk.git/-/tags/1.1.4) (2022-01-25)
 
 - Support for ZTCoreKit changes

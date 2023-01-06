@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'ZTSafetyKit'
-  s.version = '1.1.4'
+  s.version = '1.1.51'
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.summary = 'Official Zhortech ZTSafetyKit SDK for iOS to work with Safety products.'
   s.homepage = 'https://zhortech.com/'
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/zhortech/ztsafetykit-ios-sdk.git', :tag => s.version.to_s }
   s.vendored_frameworks = 'Sources/ZTSafetyKit.xcframework'
   
-  s.dependency 'ZTCoreKit', '~> '+s.version.to_s
+  s.dependency 'ZTCoreKit', '~> 1.1.61'
 
   s.ios.deployment_target   = '13.0'
   s.ios.weak_frameworks = 'Foundation'

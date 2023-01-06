@@ -1,11 +1,13 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
-// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ZTSafetyKit
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ZTSafetyKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import CoreBluetooth
 import Foundation
 import Swift
 import ZTCoreKit
 import _Concurrency
+import _StringProcessing
 @_inheritsConvenienceInitializers final public class ZTSafetyActivity : ZTCoreKit.ZTActivity {
   override final public func save()
   override public init()
@@ -390,8 +392,8 @@ extension ZTSafetyKit.ZTSafetyRealtimeEventMessage {
   }
 }
 extension ZTSafetyKit.ZTSafety {
-  public func startActivity(autoStartActivity: Swift.Bool = false, completion: ZTSafetyKit.ZTActivityResult?)
-  public func stopActivity(completion: ZTSafetyKit.ZTActivityResult?)
+  public func startActivity(timeout: Swift.Double = 20, autoStartActivity: Swift.Bool = false, completion: ZTSafetyKit.ZTActivityResult?)
+  public func stopActivity(timeout: Swift.Double = 30, completion: ZTSafetyKit.ZTActivityResult?)
 }
 extension ZTSafetyKit.ZTSafety {
   public enum Posture : Swift.UInt8 {
@@ -420,7 +422,7 @@ public typealias ZTCalibrationResult = (ZTCoreKit.ZTError?) -> ()
 public typealias ZTActivityResult = (Swift.String?, ZTCoreKit.ZTError?) -> Swift.Void
 public typealias ZTRealtimePostureResult = (ZTSafetyKit.ZTSafetyRealtimeEventMessage) -> ()
 @_hasMissingDesignatedInitializers public class ZTSafety {
-  public static let sdkVersion: Swift.String
+  public static let version: Swift.String
   public static let activityPluginVersion: Swift.String
   public static let shared: ZTSafetyKit.ZTSafety
   public var currentPosture: ZTSafetyKit.ZTSafety.Posture? {
